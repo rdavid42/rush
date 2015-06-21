@@ -15,6 +15,7 @@ public class playerGestion : MonoBehaviour
 	public AudioSource						aWeaponPick;
 	public AudioSource						aWeaponThrow;
 	public AudioSource						aWeaponDry;
+	public AudioSource						aLose;
 	public AudioSource[]					aWeaponsSounds;
 	public AudioSource						aDeath;
 	public bool								dead;
@@ -51,9 +52,7 @@ public class playerGestion : MonoBehaviour
 				weapon.SetActive(false);
 			}
 			if (Input.GetMouseButton(0) && currentWeapon != null && currentWeapon.type == "distance" && currentWeapon.ammoCount > 0)
-			{
 				collider.gameObject.GetComponentsInParent<enemy>()[0].SendMessage("follow", transform.position);
-			}
 		}
 	}
 
